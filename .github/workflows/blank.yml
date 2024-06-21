@@ -1,0 +1,33 @@
+# https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
+# https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
+# https://github.com/svenstaro/upload-release-action/issues/70#issuecomment-1298965029
+# https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases#linking-to-the-latest-release
+
+name: Release
+on:
+  release:
+    types:
+      - released
+      - edited
+  workflow_dispatch:
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: repo
+        run: echo "name=$(basename ${{github.repository}})" >> $GITHUB_OUTPUT
+      - name: Zip archive source code
+        run: zip -9vr ${{steps.repo.outputs.name}}.zip . -x .git*\*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{steps.repo.outputs.name}}.zip
+          path: ${{steps.repo.outputs.name}}.zip
+      - name: Upload to releases
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{secrets.GITHUB_TOKEN}}
+          file: ${{steps.repo.outputs.name}}.zip
+          tag: ${{github.ref}}
+          overwrite: true

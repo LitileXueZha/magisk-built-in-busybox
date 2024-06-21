@@ -1,6 +1,6 @@
 {
     "version": "v0.1.0",
     "versionCode": 100,
-    "zipUrl": "https://github.com/LitileXueZha/magisk-built-in-busybox/archive/refs/heads/main.zip",
+    "zipUrl": "https://github.com/LitileXueZha/magisk-built-in-busybox/releases/latest/download/magisk-built-in-busybox.zip",
     "changelog": "https://raw.githubusercontent.com/LitileXueZha/magisk-built-in-busybox/main/CHANGELOG"
 }
