@@ -7,3 +7,4 @@ version=v0.1.0
 versionCode=100
 author=litilexuezha, other deverlopers
 description=Symbolic applets link to Magisk/KernelSU built-in BusyBox binary
+updateJson=https://raw.githubusercontent.com/LitileXueZha/magisk-built-in-busybox/main/update.json
