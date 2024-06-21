@@ -1,0 +1,9 @@
+# https://topjohnwu.github.io/Magisk/guides.html#moduleprop
+# https://kernelsu.org/zh_CN/guide/module.html#module-prop
+
+id=built-in-busybox
+name=Built-in BusyBox
+version=v0.1.0
+versionCode=100
+author=litilexuezha, other deverlopers
+description=Symbolic applets link to Magisk/KernelSU built-in BusyBox binary
