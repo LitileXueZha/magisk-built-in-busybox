@@ -5,10 +5,6 @@
 - https://github.com/zgfg/BuiltIn-BusyBox
 - https://www.busybox.net/downloads/BusyBox.html
 
-## Download
-
-https://github.com/LitileXueZha/magisk-built-in-busybox/archive/refs/heads/main.zip
-
 ## Use custom BusyBox binary
 
 ```shell
